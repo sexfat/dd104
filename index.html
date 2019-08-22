@@ -46,29 +46,42 @@
             width: 500px;
             color: blue
         }
+
         /* 練習 */
+        .section {
+            margin: 50px 0;
+        }
+
         .section article {
-            width:  1200px;
+            width: 1200px;
             margin: 0 auto;
         }
-        .section article img   {
+
+        .section article img {
             width: 300px
         }
-        .section article .pic   {
+
+        .section article .pic {
             width: 300px;
             float: left;
         }
+
         .section article .main {
             width: 800px;
-            float: right;    
+            float: right;
         }
+
         /* 額外加底線 */
         .section article .main h2::after {
-              display: block;
-              content: '';
-              margin-top: 10px;
-              border-bottom: 2px solid #000; 
-              width: 50px;
+            display: block;
+            content: '';
+            margin-top: 10px;
+            border-bottom: 2px solid #000;
+            width: 50px;
+        }
+
+        .clearfix {
+            clear: both;
         }
 
         /* .box p  {
@@ -84,6 +97,50 @@
         .left_100 {
 
             margin-left: 100px;
+        }
+
+        dl,
+        dt,
+        dd {
+
+            margin: 0;
+            padding: 0;
+        }
+
+        .section_dl {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section_dl dl {
+            text-align: center;
+            display: inline-block;
+            width: 300px;
+            margin: 0 10px;
+            /* background-color: rgb(221, 221, 221); */
+        }
+
+        .section_dl dl dd {
+            font-weight: 100;
+            font-size: 13px;
+        }
+
+        .section_dl img {
+            width: 100px;
+        }
+
+        /* table */
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 0 15px;
+            text-align: center;
         }
     </style>
 </head>
@@ -140,15 +197,227 @@
                     <ul>
                         <li>廣編特輯, 美食</li>
                         <li>iCHEF, 資廚</li>
-                    </ul>  
+                    </ul>
                     <div class="contents">
-                            湳雅夜市有間 50 年歷史的眼鏡仔豬血湯，第三代接班人從小就在店裡幫忙，曾一度逃避，直到28歲決定回家接班
+                        湳雅夜市有間 50 年歷史的眼鏡仔豬血湯，第三代接班人從小就在店裡幫忙，曾一度逃避，直到28歲決定回家接班
                     </div>
 
                 </div>
+                <div class="clearfix"></div>
+            </article>
+        </section>
+        <section class="section">
+            <article>
+                <div class="pic"><img src="img/DSC_7260-1-600x400.jpg" alt=""></div>
+                <div class="main">
+                    <h2>他放棄了無人機的夢想，只想為夜歸的人熬一鍋湯</h2>
+                    <ul>
+                        <li>廣編特輯, 美食</li>
+                        <li>iCHEF, 資廚</li>
+                    </ul>
+                    <div class="contents">
+                        湳雅夜市有間 50 年歷史的眼鏡仔豬血湯，第三代接班人從小就在店裡幫忙，曾一度逃避，直到28歲決定回家接班
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
 
             </article>
         </section>
+        <section class="section">
+            <article>
+                <div class="pic"><img src="img/DSC_7260-1-600x400.jpg" alt=""></div>
+                <div class="main">
+                    <h2>他放棄了無人機的夢想，只想為夜歸的人熬一鍋湯</h2>
+                    <ul>
+                        <li>廣編特輯, 美食</li>
+                        <li>iCHEF, 資廚</li>
+                    </ul>
+                    <div class="contents">
+                        湳雅夜市有間 50 年歷史的眼鏡仔豬血湯，第三代接班人從小就在店裡幫忙，曾一度逃避，直到28歲決定回家接班
+                    </div>
+
+                </div>
+                <div class="clearfix"></div>
+
+            </article>
+        </section>
+        <!-- dl dt dd -->
+        <section class="section_dl">
+            <dl>
+                <img src="./img/icon.png" alt="">
+                <dt>
+                    <h3>web design</h3>
+                </dt>
+                <dd>“It is not because things are difficult that we do not dare; it is because we do not dare that they
+                    are difficult.”
+
+                </dd>
+            </dl>
+            <!-- 第二組 -->
+            <dl>
+                <img src="./img/icon.png" alt="">
+                <dt>
+                    <h3>web design</h3>
+                </dt>
+                <dd>“It is not because things are difficult that we do not dare; it is because we do not dare that they
+                    are difficult.”
+
+                </dd>
+            </dl>
+            <!-- 第三組 -->
+            <dl>
+                <img src="./img/icon.png" alt="">
+                <dt>
+                    <h3>web design</h3>
+                </dt>
+                <dd>“It is not because things are difficult that we do not dare; it is because we do not dare that they
+                    are difficult.”
+
+                </dd>
+            </dl>
+
+        </section>
+        <section class="section_table">
+            <table>
+                <tr>
+                    <td>001</td>
+                    <td>002</td>
+                </tr>
+                <tr>
+                    <td>003</td>
+                    <td>004</td>
+                </tr>
+
+            </table>
+
+            <h4>4列3行</h4>
+            <table>
+                <tr>
+                    <td colspan="2">1</td>
+                    <!-- <td>2</td> -->
+                    <td rowspan="2">3</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <!-- <td>7</td> -->
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                </tr>
+            </table>
+            <!-- 表格結構 -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>姓名</th>
+                        <th>性別</th>
+                        <th>電話</th>
+                        <th>email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+
+
+
+            </table>
+        </section>
+
+
+        <section>
+            <h3>會員登入</h3>
+            <form action="" method="GET">
+                帳號
+                <input type="text" name="account" value="account"> <br>
+                密碼
+                <input type="password" name="psw" value="psw" id=""><br>
+                <input type="submit" value="送出">
+                <input type="reset" value="重置">
+            </form>
+            <h3>會員註冊</h3>
+            <form action="" method="POST">
+                  <fieldset>
+                      <legend>會員登入</legend>
+                
+
+                    姓名
+                    <input type="text" name="" id=""><br>
+                    會員帳號
+                    <input type="text" name="" id=""><br>
+                    密碼
+                    <input type="password" name="psw" value="psw" id=""><br>
+                    性別
+                    男 <input type="radio" value="male" name="gen" id="" >
+                    女 <input type="radio" value="female" required name="gen" id="">
+                    中性 <input type="radio" value="other" name="gen" id=""> <br>
+                    生日
+                    <input type="date" name="birthday" id="" value="birthday"><br>
+                    電子信箱
+                    <input type="email" name="email" value="email" id=""><br>
+                    <p>從哪裡得知1</p>
+                    <select name="where" value="whe" id="" multiple  size="2">
+                        <option value="">網路</option>
+                        <option value="" selected>社群</option>
+                        <option value="">親友</option>
+                        <option value="">其他</option>
+                    </select><br>
+                    <p>從哪裡得知2</p>
+                    網路
+                    <input type="checkbox" value="web" name="web" id="" required> <br>
+                    社群
+                    <input type="checkbox" value="soical" name="soical" id=""><br>
+                    親友
+                    <input type="checkbox" value="parents" name="parents" id=""> <br>
+
+                    <p>備註</p>
+                    <textarea name="" id="" cols="30" rows="10">
+                        打字
+                    </textarea>
+                    <input type="file" name="檔案上傳" id="">
+                    <br>
+
+
+                    <input type="submit" value="送出">
+                    <input type="reset" value="重置">
+                </fieldset>
+            </form>
+<a href="" ></a>
+
+
+        </section>
+        <section style="height: 500px;">
+            <a href="https://tw.yahoo.com/"  target="_blank">連結到yahoo</a>
+            <img src="" alt="">
+            <link rel="stylesheet" href="style.css">
+             
+
+        </section>
+
     </div>
     <footer>
         頁尾
