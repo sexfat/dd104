@@ -11,8 +11,9 @@
     <style>
         body {
             padding: 0;
-            margin: 0 ;
+            margin: 0;
         }
+
         .topbar {
             margin-bottom: 0px;
             background-color: rgb(19, 19, 19);
@@ -32,18 +33,44 @@
             height: 143px;
             background-size: cover;
             margin: 0;
-            
+
         }
+
         .content {
             /* background-color: rgb(28, 253, 167); */
             height: 500px;
             color: #000;
         }
 
-        article .box  {
+        article .box {
             width: 500px;
             color: blue
         }
+        /* 練習 */
+        .section article {
+            width:  1200px;
+            margin: 0 auto;
+        }
+        .section article img   {
+            width: 300px
+        }
+        .section article .pic   {
+            width: 300px;
+            float: left;
+        }
+        .section article .main {
+            width: 800px;
+            float: right;    
+        }
+        /* 額外加底線 */
+        .section article .main h2::after {
+              display: block;
+              content: '';
+              margin-top: 10px;
+              border-bottom: 2px solid #000; 
+              width: 50px;
+        }
+
         /* .box p  {
          border-bottom: 1px solid #000  
    
@@ -53,6 +80,7 @@
         img {
             width: 500px;
         }
+
         .left_100 {
 
             margin-left: 100px;
@@ -86,7 +114,7 @@
                 <p>
                     夏天到來的時候，雖然暑氣難耐、氣候潮濕，<br>卻也盛產許多水果，讓人對夏天多了份期待。
                 </p>
-                 <hr>
+                <hr>
                 <p>
                     說到屬於夏天的水果，除了芒果之外，最讓我期待的就是荔枝，一小顆翠白的果實，嚐起來多汁、甜而不膩口，而且有玉荷包、黑葉、糯米荔枝不同的品種依序成熟。但每當忍不住一顆接一顆吃的時候，總想起小時候因為吃太多荔枝而流鼻血的故事，而收斂許多。
                 </p>
@@ -94,7 +122,7 @@
                     因為貪戀著荔枝的滋味，而想盡辦法延後它的保存期限，用報紙包覆冷藏、浸泡鹽水後冷藏、剝殼後冷凍，但即使這樣也只能將時間往後延一至兩個禮拜。於是想到可以將荔枝泡成酒，即使過了荔枝的產季，仍然可以品嚐到荔枝的滋味。等待三個月的釀製，到了秋天的時候開瓶，搭配微涼的天氣飲用，剛剛好。
                 </p>
                 <span>
-                  span
+                    span
                 </span>
                 <span>
                     span
@@ -104,9 +132,22 @@
             <div><img src="img/img_2623e68bb7e8b29d.jpg" alt=""></div>
         </article>
 
-        <section>
+        <section class="section">
+            <article>
+                <div class="pic"><img src="img/DSC_7260-1-600x400.jpg" alt=""></div>
+                <div class="main">
+                    <h2>他放棄了無人機的夢想，只想為夜歸的人熬一鍋湯</h2>
+                    <ul>
+                        <li>廣編特輯, 美食</li>
+                        <li>iCHEF, 資廚</li>
+                    </ul>  
+                    <div class="contents">
+                            湳雅夜市有間 50 年歷史的眼鏡仔豬血湯，第三代接班人從小就在店裡幫忙，曾一度逃避，直到28歲決定回家接班
+                    </div>
 
-            
+                </div>
+
+            </article>
         </section>
     </div>
     <footer>
