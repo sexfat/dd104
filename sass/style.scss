@@ -1,0 +1,15 @@
+@import "var";
+// @import "module/header";
+
+
+
+
+body {
+    .wrapper {
+        color: $fontcolor;
+        margin: 10px;
+        padding-top: $padding-top;
+        @import "module/header";
+        @import "module/footer";
+    }
+}
