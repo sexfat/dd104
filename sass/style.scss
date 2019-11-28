@@ -2,22 +2,45 @@
 @import "mixin/rect";
 @import "mixin/box-shadow";
 
-// @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@mixin margin-center() {
+    margin-left: auto;
+    margin-right: auto;
+}
 
-
-@mixin spec($classname, $width, $height ,$img) {
-    #{$classname} {
-        width:$width ;
-        height:$height;
-        background-image:url('img/#{$img}.jpg');
+@mixin layout($style, $bgc, $w:null, $h:null) {
+    @if $style == full {
+        width: 100%;
+        background-color: $bgc;
+        height: $h;
+       
+    }
+    @else {
+        width: $w;
+        background-color: $bgc;
+        @include margin-center();
+        height: $h;
     }
 }
 
 
-@include spec('.logo-nav'  , 100px , 30px , 'bot');
 
 
 
+
+
+// @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+
+
+@mixin spec($classname, $width, $height, $img) {
+    #{$classname} {
+        width: $width;
+        height: $height;
+        background-image:url('img/#{$img}');
+    }
+}
+
+
+@include spec('.logo-nav', 100px, 30px, 'bot.jpg');
 
 
 
@@ -28,13 +51,12 @@ body {
 
     .wrapper {
 
+        @include layout(fixed,#333 ,1200px);
+
         // @import "module/header";
         // @import "module/footer";
         //mixin
-        @mixin margin-center() {
-            margin-left: auto;
-            margin-right: auto;
-        }
+       
 
         .content {
             @include margin-center();
@@ -48,7 +70,6 @@ body {
 
         .box-margin {
             @include margin(50px, 50px, 400px, 500px);
-
         }
 
         @mixin margin-base($left:40px, $right:40px) {

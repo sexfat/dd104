@@ -10,6 +10,13 @@ body {
   margin: 10px;
 }
 
+body .wrapper {
+  width: 1200px;
+  background-color: #333;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body .wrapper .content {
   margin-left: auto;
   margin-right: auto;
