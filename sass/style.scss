@@ -1,9 +1,6 @@
 @import "var";
+@import "mixin/rect";
 
-@mixin rect($width, $height) {
-    width: $width;
-    height: $height
-}
 
 
 
@@ -25,17 +22,18 @@ body {
 
         .content {
             @include margin-center();
-            @include rect(100px,30px );
+           
         }
 
-        @mixin margin($left, $right) {
+        @mixin margin($left, $right ,$width:100px , $height: 100px) {
             margin-left: $left;
             margin-right: $right;
+            @include rect($width , $height)
         }
 
         .box-margin {
-            @include margin(50px , 50px);
-            @include rect(400px,600px);
+            @include margin(50px , 50px ,  400px , 500px);
+           
         }
 
         @mixin margin-base($left:40px, $right:40px) {
@@ -52,7 +50,6 @@ body {
          }
          .box-null {
             @include margin-null(100px);
-
          }
 
     }

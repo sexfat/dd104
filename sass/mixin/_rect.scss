@@ -1,0 +1,5 @@
+@mixin rect($width, $height) {
+    width: $width;
+    height: $height;
+    background-color: #fff;
+}
