@@ -8,12 +8,13 @@
 }
 
 @mixin layout($style, $bgc, $w:null, $h:null) {
-    @if $style == full {
+    @if $style==full {
         width: 100%;
         background-color: $bgc;
         height: $h;
-       
+
     }
+
     @else {
         width: $w;
         background-color: $bgc;
@@ -51,12 +52,12 @@ body {
 
     .wrapper {
 
-        @include layout(fixed,#333 ,1200px);
+        @include layout(fixed, #333, 1200px);
 
         // @import "module/header";
         // @import "module/footer";
         //mixin
-       
+
 
         .content {
             @include margin-center();
@@ -90,5 +91,21 @@ body {
             @include margin-null(100px);
             @include border-shadow(0 2px 3px rgba(0, 0, 0, .1));
         }
+    }
+}
+
+
+@mixin wrapper($width, $height) {
+    .wrapper {
+        width: $width;
+        height: $height;
+        @content;
+    }
+}
+
+body {
+    @include wrapper(1200px, 768px) {
+        background-color: #fff;
+        @include margin-center();
     }
 }

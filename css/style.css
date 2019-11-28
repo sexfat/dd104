@@ -41,4 +41,12 @@ body .wrapper .box-null {
   -o-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
+
+body .wrapper {
+  width: 1200px;
+  height: 768px;
+  background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*# sourceMappingURL=style.css.map */
