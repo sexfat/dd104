@@ -1,8 +1,8 @@
 @import "var";
 @import "mixin/rect";
+@import "mixin/box-shadow";
 
-
-
+// @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 
 body {
@@ -22,7 +22,6 @@ body {
 
         .content {
             @include margin-center();
-           
         }
 
         @mixin margin($left, $right ,$width:100px , $height: 100px) {
@@ -50,7 +49,7 @@ body {
          }
          .box-null {
             @include margin-null(100px);
+            @include border-shadow(0 2px 3px rgba(0, 0, 0, .1));
          }
-
     }
 }
