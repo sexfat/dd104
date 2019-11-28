@@ -147,11 +147,18 @@ $b : 3;
     }
 }
 
-
 @include fontstyle(20px);
 
 .width {
     width: round(100.2px);
     height: floor(100.1px);
     color: #999 - #333
+}
+
+
+@for $i from 1 through 10 {
+
+    .box_#{$i} {
+        width: $i * 1px;
+    }
 }
