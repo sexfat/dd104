@@ -1,4 +1,24 @@
-body {
-  margin: 20px;
+body .wrapper {
+  color: #e1ffc3;
+  margin: 10px;
+  padding-top: 80px;
+}
+
+body .wrapper header .logo {
+  width: 100px;
+  height: 30px;
+  background-color: #ff9900;
+}
+
+body .wrapper footer .logo {
+  width: 100px;
+  height: 30px;
+}
+
+body .wrapper footer nav ul li {
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  background-color: #00fc7a;
 }
 /*# sourceMappingURL=main.css.map */

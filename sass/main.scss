@@ -1,6 +1,12 @@
 @import "var";
 
 
-body{
-margin: $margin;
+body {
+    .wrapper {
+        color: $fontcolor;
+        margin: 10px;
+        padding-top: $padding-top;
+        @import "module/header";
+        @import "module/footer";
+    }
 }
