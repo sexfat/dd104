@@ -167,18 +167,60 @@ $b : 3;
 @include for_function(10);
 
 
-@mixin margin-dis($dir , $num) {
+@mixin margin-dis($dir, $num) {
     @for $i from 1 through $num {
         .margin#{$dir}-#{$i} {
-            margin-#{$dir}:$i * 1px ;
+            margin-#{$dir}: $i * 1px;
+        }
+    }
+}
+
+// @for $i from 1 through 12 
+
+
+
+// .col-md-1 {
+//     width: (1/12) *100%;
+// }
+
+// .col-md-2 {
+//     width: (2/12) *100%;
+// }
+
+
+@mixin grid($grid_num) {
+    @for $i from 1 through $grid_num {
+        .col-md-#{$i} {
+            width: ($i / $grid_num) * 100%;
+            display: inline-block;
+            padding:5px 0;
+            box-sizing: border-box;
         }
     }
 }
 
 
-@include margin-dis(top,100);
-@include margin-dis(left,100);
+@include grid(12);
+
+
+//each
+$list : apple orange banana guava  ;
+
+@each $img in $list {
+   .img_#{$img}{
+       background: url('./img/#{$img}.jpg');
+   }
+}
 
 
 
 
+
+
+
+
+
+
+
+// @include margin-dis(top,100);
+// @include margin-dis(left,100);
