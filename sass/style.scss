@@ -115,8 +115,43 @@ $b : 3;
 
 .box-cal {
     width: 10px + 30px;
-    height: 30px - 20 ;
-    margin : 10 * 20px;
-    padding: ($a / $b) + px ;
-    // font: 12px / 18px 
+    height: 30px - 20;
+    margin: 10 * 20px;
+    padding: ($a / $b) + px;
+    font: 12px / 18px
+}
+
+
+// $fontbase : 16px;
+
+
+@mixin fontstyle ($fontbase) {
+    h1 {
+        font-size: ceil($fontbase * 4);
+    }
+
+    h2 {
+        font-size: ceil($fontbase * 3.2);
+    }
+
+    h3 {
+        font-size: ceil($fontbase * 2.8);
+    }
+
+    h4 {
+        font-size: ceil($fontbase * 2);
+    }
+
+    h5 {
+        font-size: ceil($fontbase * 1.2);
+    }
+}
+
+
+@include fontstyle(20px);
+
+.width {
+    width: round(100.2px);
+    height: floor(100.1px);
+    color: #999 - #333
 }

@@ -55,5 +55,32 @@ body .wrapper .box-null {
   height: 10px;
   margin: 200px;
   padding: 3.33333px;
+  font: 12px / 18px;
+}
+
+h1 {
+  font-size: 80px;
+}
+
+h2 {
+  font-size: 64px;
+}
+
+h3 {
+  font-size: 56px;
+}
+
+h4 {
+  font-size: 40px;
+}
+
+h5 {
+  font-size: 24px;
+}
+
+.width {
+  width: 100px;
+  height: 100px;
+  color: #666666;
 }
 /*# sourceMappingURL=style.css.map */
