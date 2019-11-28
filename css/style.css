@@ -42,11 +42,18 @@ body .wrapper .box-null {
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
 }
 
-body .wrapper {
+.wrapper {
   width: 1200px;
   height: 768px;
   background-color: #fff;
   margin-left: auto;
   margin-right: auto;
+}
+
+.box-cal {
+  width: 40px;
+  height: 10px;
+  margin: 200px;
+  padding: 3.33333px;
 }
 /*# sourceMappingURL=style.css.map */
