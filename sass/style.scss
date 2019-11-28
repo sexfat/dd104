@@ -5,6 +5,22 @@
 // @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 
+@mixin spec($classname, $width, $height ,$img) {
+    #{$classname} {
+        width:$width ;
+        height:$height;
+        background-image:url('img/#{$img}.jpg');
+    }
+}
+
+
+@include spec('.logo-nav'  , 100px , 30px , 'bot');
+
+
+
+
+
+
 body {
     color: $fontcolor;
     background-color: rgb(228, 228, 228);
@@ -24,15 +40,15 @@ body {
             @include margin-center();
         }
 
-        @mixin margin($left, $right ,$width:100px , $height: 100px) {
+        @mixin margin($left, $right, $width:100px, $height: 100px) {
             margin-left: $left;
             margin-right: $right;
-            @include rect($width , $height)
+            @include rect($width, $height)
         }
 
         .box-margin {
-            @include margin(50px , 50px ,  400px , 500px);
-           
+            @include margin(50px, 50px, 400px, 500px);
+
         }
 
         @mixin margin-base($left:40px, $right:40px) {
@@ -43,13 +59,15 @@ body {
         .box-base {
             @include margin-base(60px);
         }
-         @mixin margin-null($left , $right:null){
-             margin-left: $left;
-             margin-right: $right;
-         }
-         .box-null {
+
+        @mixin margin-null($left, $right:null) {
+            margin-left: $left;
+            margin-right: $right;
+        }
+
+        .box-null {
             @include margin-null(100px);
             @include border-shadow(0 2px 3px rgba(0, 0, 0, .1));
-         }
+        }
     }
 }
