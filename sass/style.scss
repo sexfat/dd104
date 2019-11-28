@@ -1,5 +1,12 @@
 @import "var";
 
+@mixin rect($width, $height) {
+    width: $width;
+    height: $height
+}
+
+
+
 
 body {
     color: $fontcolor;
@@ -18,6 +25,7 @@ body {
 
         .content {
             @include margin-center();
+            @include rect(100px,30px );
         }
 
         @mixin margin($left, $right) {
@@ -26,7 +34,26 @@ body {
         }
 
         .box-margin {
-            @include margin(30px, 30px);
+            @include margin(50px , 50px);
+            @include rect(400px,600px);
         }
+
+        @mixin margin-base($left:40px, $right:40px) {
+            margin-left: $left;
+            margin-right: $right;
+        }
+
+        .box-base {
+            @include margin-base(60px);
+        }
+         @mixin margin-null($left , $right:null){
+             margin-left: $left;
+             margin-right: $right;
+         }
+         .box-null {
+            @include margin-null(100px);
+
+         }
+
     }
 }
