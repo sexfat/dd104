@@ -155,10 +155,30 @@ $b : 3;
     color: #999 - #333
 }
 
-
-@for $i from 1 through 10 {
-
-    .box_#{$i} {
-        width: $i * 1px;
+@mixin for_function($num) {
+    @for $i from 1 through $num {
+        .box_#{$i} {
+            width: $i * 1px;
+        }
     }
 }
+
+
+@include for_function(10);
+
+
+@mixin margin-dis($dir , $num) {
+    @for $i from 1 through $num {
+        .margin#{$dir}-#{$i} {
+            margin-#{$dir}:$i * 1px ;
+        }
+    }
+}
+
+
+@include margin-dis(top,100);
+@include margin-dis(left,100);
+
+
+
+
