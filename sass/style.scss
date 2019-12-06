@@ -257,6 +257,46 @@ $value in $colors {
 }
 
 
+//list
+
+$margin : 10px 20px 30px;
+
+.boxmargin {
+    // margin: length($margin);
+    // padding: nth($margin, 3);
+    margin : append($margin , 40px);
+    padding: index($margin ,10px);
+}
+
+
+$padding_1:(
+    top: 10px,
+    left: 20px
+);
+
+$padding_2:(
+   right: 40px,
+   bottom : 30px
+
+);
+
+$colormap : (
+  primary : #fff,
+  secondary : #333
+);
+
+$padding: map-merge( $padding_1, $padding_2);
+
+
+.box {
+// padding: map-get($padding_1 ,top);
+padding:  inspect($padding);
+background-color: map-get($colormap, secondary);
+
+}
+
+
+
 
 
 

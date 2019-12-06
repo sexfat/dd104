@@ -273,4 +273,14 @@ h5 {
     margin: 10px;
   }
 }
+
+.boxmargin {
+  margin: 10px 20px 30px 40px;
+  padding: 1;
+}
+
+.box {
+  padding: (top: 10px, left: 20px, right: 40px, bottom: 30px);
+  background-color: #333;
+}
 /*# sourceMappingURL=style.css.map */

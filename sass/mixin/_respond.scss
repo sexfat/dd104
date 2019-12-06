@@ -1,3 +1,5 @@
+
+//mixin
 @mixin respond($breakpoint) {
     @if $breakpoint=="small" {
         @media all and (max-width: $phone) {
@@ -18,7 +20,7 @@
     }
 }
 
-
+//each
 @mixin respond_each($rwd) {
 
     @each $viewpoint,$value in $breakpoints {
