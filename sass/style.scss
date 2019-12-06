@@ -226,14 +226,58 @@ $fonts: (h1: 40px,
     h2:30px,
     h3:20px,
     h4: 16px,
-    h5: 12px
-);
+    h5: 12px);
 
-@each $title,$size in $fonts {
+@each $title,
+$size in $fonts {
     #{$title} {
         font-size: $size;
     }
 }
+
+$colors :(blue : #0073ff,
+    yellow : #fcfc00,
+    purple: #dd00ff);
+
+@each $color,
+$value in $colors {
+    .box-#{$color} {
+        background-color: $value;
+    }
+}
+
+
+
+
+
+@include respond_each(medium) {
+    .each_small {
+        margin: 10px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

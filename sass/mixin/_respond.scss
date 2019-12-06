@@ -17,3 +17,16 @@
         }
     }
 }
+
+
+@mixin respond_each($rwd) {
+
+    @each $viewpoint,$value in $breakpoints {
+        @if $rwd==$viewpoint {
+            @media all and (min-width:$value) {
+                @content;
+            }
+        }
+    }
+
+}

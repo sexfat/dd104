@@ -255,4 +255,22 @@ h4 {
 h5 {
   font-size: 12px;
 }
+
+.box-blue {
+  background-color: #0073ff;
+}
+
+.box-yellow {
+  background-color: #fcfc00;
+}
+
+.box-purple {
+  background-color: #dd00ff;
+}
+
+@media all and (min-width: 988px) {
+  .each_small {
+    margin: 10px;
+  }
+}
 /*# sourceMappingURL=style.css.map */
