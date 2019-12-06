@@ -211,15 +211,33 @@ $b : 3;
 
 
 //each
-// $list : apple orange banana guava;
+$list : apple orange banana guava;
 
-// @each $img in $list {
-//     .img_#{$img} {
-//         background: url('./img/#{$img}.jpg');
-//     }
-// }
+@each $img in $list {
+    .img_#{$img} {
+        background: url('./img/#{$img}.jpg');
+    }
+}
 
-// 1200px 992px 768px 576px  375px 
+//1200px 992px 768px 576px  375px 
+
+//map
+$fonts: (h1: 40px,
+    h2:30px,
+    h3:20px,
+    h4: 16px,
+    h5: 12px
+);
+
+@each $title,$size in $fonts {
+    #{$title} {
+        font-size: $size;
+    }
+}
+
+
+
+
 
 
 
@@ -234,6 +252,9 @@ $b : 3;
 //         width: 300px;
 //     }
 // }
+
+
+
 
 
 
