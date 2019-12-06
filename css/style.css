@@ -1,3 +1,21 @@
+@media all and (min-width: 1200px) {
+  .box {
+    font-size: 30px;
+  }
+}
+
+@media all and (max-width: 1199px) and (min-width: 479px) {
+  .box {
+    font-size: 30px;
+  }
+}
+
+@media all and (max-width: 478px) {
+  .box {
+    font-size: 30px;
+  }
+}
+
 .logo-nav {
   width: 100px;
   height: 30px;
@@ -218,21 +236,5 @@ h5 {
   padding: 5px 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-}
-
-.img_apple {
-  background: url("./img/apple.jpg");
-}
-
-.img_orange {
-  background: url("./img/orange.jpg");
-}
-
-.img_banana {
-  background: url("./img/banana.jpg");
-}
-
-.img_guava {
-  background: url("./img/guava.jpg");
 }
 /*# sourceMappingURL=style.css.map */

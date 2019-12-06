@@ -1,4 +1,4 @@
-@import "var";
+@import "base/var";
 
 
 body {
@@ -10,3 +10,26 @@ body {
         @import "module/footer";
     }
 }
+
+
+
+// $font1: (
+  
+//    h1: 10px,
+//    h2: 20px
+// );
+
+// $font2: (
+//    h3:30px,
+//    h4: 40px,
+// );
+
+
+
+
+// $allfont : map-merge($font1 , $font2 );
+
+
+// .fonts {
+//     margin: inspect($allfont);
+// }

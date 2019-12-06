@@ -1,6 +1,13 @@
-@import "var";
+@import "base/var";
 @import "mixin/rect";
 @import "mixin/box-shadow";
+@import "mixin/respond";
+@import "desktop";
+@import "medium";
+@import "small";
+
+
+
 
 @mixin margin-center() {
     margin-left: auto;
@@ -193,7 +200,7 @@ $b : 3;
         .col-md-#{$i} {
             width: ($i / $grid_num) * 100%;
             display: inline-block;
-            padding:5px 0;
+            padding: 5px 0;
             box-sizing: border-box;
         }
     }
@@ -204,13 +211,59 @@ $b : 3;
 
 
 //each
-$list : apple orange banana guava  ;
+// $list : apple orange banana guava;
 
-@each $img in $list {
-   .img_#{$img}{
-       background: url('./img/#{$img}.jpg');
-   }
-}
+// @each $img in $list {
+//     .img_#{$img} {
+//         background: url('./img/#{$img}.jpg');
+//     }
+// }
+
+// 1200px 992px 768px 576px  375px 
+
+
+
+// @mixin rwd($phone_max-num) {
+//     @media all and (max-width: $phone_max-num) {
+//         @content
+//     }
+// }
+
+// @include rwd(768px) {
+//     .box {
+//         width: 300px;
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
