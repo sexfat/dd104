@@ -280,7 +280,36 @@ h5 {
 }
 
 .box {
-  padding: (top: 10px, left: 20px, right: 40px, bottom: 30px);
+  padding: 10px;
   background-color: #333;
+}
+
+.font-thin {
+  font-weight: 100;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.wrapper {
+  *zoom: 1;
+}
+
+.wrapper:before, .wrapper:after {
+  content: "";
+  display: table;
+}
+
+.wrapper:after {
+  clear: both;
 }
 /*# sourceMappingURL=style.css.map */

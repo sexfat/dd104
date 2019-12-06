@@ -13,3 +13,10 @@ $desktop : 1200px;
 $breakpoints :(small: 720px,
     medium:988px,
     desktop: 1200px);
+
+
+$font-weights: (
+    "thin" : 100,
+    "regular" : 400,
+    "medium" : 500,
+    "bold" : 700);
