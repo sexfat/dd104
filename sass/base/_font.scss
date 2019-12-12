@@ -1,0 +1,55 @@
+body {
+    font-family: $fontfamily;
+    line-height: $line_height;
+    font-weight: $font_weight;
+    font-size: $font_base_size;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $base_color;
+    letter-spacing: $letter-spacing;
+    word-spacing: $word-spacing;
+}
+
+@mixin FontFamily($fontfamilys) {
+    @if $fontfamilys !=null {
+
+        @each $fontName,
+        $fontlist in $fontfamilys {
+            $fontfamily: nth($fontlist, 1);
+            $fontURL: nth($fontlist, 2);
+            @import url($fontURL);
+
+            body {
+                font-family: $fontfamily;
+            }
+        }
+    }
+
+    @else {
+        body {
+            font-family: initial;
+        }
+    }
+}
+
+
+@include FontFamily($fontfamilys);
+
+
+
+
+
+
+
+
+
+
+
+
+// @each $fontURL in $fontfamily {
+//     $
+
+//     @import url(#{$fontURL});
+//     body {font-family:$fontName}
+// }
