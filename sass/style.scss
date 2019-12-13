@@ -293,8 +293,110 @@ $padding: map-merge($padding_1, $padding_2);
 @include font-weights($font-weights);
 
 .wrapper {
-  @include clearfix();
+    @include clearfix();
 }
+
+// a {
+//     color: #333;
+// }
+
+// a:hover {
+//    color: #565656;
+// }
+
+
+a {
+    color: #333;
+
+    &:hover {
+        color: #565656;
+    }
+
+    ;
+
+    &:active {
+        color: #999;
+    }
+}
+
+#box::before {
+    content: '';
+}
+
+#box::after {
+    content: '';
+}
+
+
+//sass
+
+#box1 {
+    &::before {}
+
+    &::after {}
+}
+
+
+//@extend
+
+// .boxcommon {
+//     width: 100px;
+//     height: 30px;
+// }
+
+/*extend*/
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+#box2 {
+    width: 100px;
+    height: 30px;
+    @extend .blue;
+}
+
+#box3 {
+    width: 100px;
+    height: 30px;
+    @extend .green;
+}
+
+/*mixin*/
+@mixin rect1() {
+    width: 100px;
+    height: 30px;
+}
+
+.box2 {
+    background-color: blue;
+    @include rect1();
+}
+
+.box3 {
+    background-color: green;
+    @include rect1();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

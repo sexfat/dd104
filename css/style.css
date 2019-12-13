@@ -312,4 +312,56 @@ h5 {
 .wrapper:after {
   clear: both;
 }
+
+a {
+  color: #333;
+}
+
+a:hover {
+  color: #565656;
+}
+
+a:active {
+  color: #999;
+}
+
+#box::before {
+  content: '';
+}
+
+#box::after {
+  content: '';
+}
+
+/*extend*/
+.blue, #box2 {
+  background-color: blue;
+}
+
+.green, #box3 {
+  background-color: green;
+}
+
+#box2 {
+  width: 100px;
+  height: 30px;
+}
+
+#box3 {
+  width: 100px;
+  height: 30px;
+}
+
+/*mixin*/
+.box2 {
+  background-color: blue;
+  width: 100px;
+  height: 30px;
+}
+
+.box3 {
+  background-color: green;
+  width: 100px;
+  height: 30px;
+}
 /*# sourceMappingURL=style.css.map */
