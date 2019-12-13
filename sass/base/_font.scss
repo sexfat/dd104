@@ -9,6 +9,7 @@ body {
     color: $base_color;
     letter-spacing: $letter-spacing;
     word-spacing: $word-spacing;
+    background-color:$base-bgcolor;
 }
 
 @mixin FontFamily($fontfamilys) {
