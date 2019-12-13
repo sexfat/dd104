@@ -10,3 +10,26 @@ body {
     letter-spacing: $letter-spacing;
     word-spacing: $word-spacing;
 }
+
+@mixin FontFamily($fontfamilys) {
+    @if $fontfamilys !=null {
+
+        @each $fontName,
+        $fontlist in $fontfamilys {
+            $fontfamily: nth($fontlist, 1);
+            $fontURL: nth($fontlist, 2);
+            @import url($fontURL);
+            body {
+                font-family: $fontfamily;
+            }
+        }
+    }
+    @else {
+        body {
+            font-family: initial;
+        }
+    }
+}
+
+
+@include FontFamily($fontfamilys);
