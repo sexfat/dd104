@@ -1,3 +1,26 @@
+// 基本字型
+$basic   :  'Open Sans', sans-serif ;
+// 使用google font
+$fontfamilys: ( 
+    Noto_Sans_TC: (('Roboto', sans-serif), 'https://fonts.googleapis.com/css?family=Roboto&display=swap')
+);
+
+//font 通用設定
+$fontfamily    : $basic;
+$font_base_size : 14px ;
+$font_weight    : 300 ; 
+$line_height    : 1.5 ;
+$base_color     : #585858 ;
+$letter-spacing : 0.01rem;
+$word-spacing   : 2px ;
+
+
+
+
+
+
+
+
 $margin: 20px;
 $padding-top: 80px;
 $fontcolor: #e1ffc3;

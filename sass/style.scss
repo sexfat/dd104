@@ -1,545 +1,464 @@
-@import "base/var";
-@import "mixin/rect";
-@import "mixin/box-shadow";
-@import "mixin/respond";
-@import "mixin/clearfix";
-@import "mixin/fontweight";
-@import "desktop";
-@import "medium";
-@import "small";
+// @import "base/var";
+// @import "mixin/rect";
+// @import "mixin/box-shadow";
+// @import "mixin/respond";
+// @import "mixin/clearfix";
+// @import "mixin/fontweight";
+// @import "desktop";
+// @import "medium";
+// @import "small";
 
 
 
 
-@mixin margin-center() {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@mixin layout($style, $bgc, $w:null, $h:null) {
-    @if $style==full {
-        width: 100%;
-        background-color: $bgc;
-        height: $h;
-
-    }
-
-    @else {
-        width: $w;
-        background-color: $bgc;
-        @include margin-center();
-        height: $h;
-    }
-}
-
-
-
-
-
-
-
-// @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-
-
-@mixin spec($classname, $width, $height, $img) {
-    #{$classname} {
-        width: $width;
-        height: $height;
-        background-image:url('img/#{$img}');
-    }
-}
-
-
-@include spec('.logo-nav', 100px, 30px, 'bot.jpg');
-
-
-
-body {
-    color: $fontcolor;
-    background-color: rgb(228, 228, 228);
-    margin: 10px;
-
-    .wrapper {
-
-        @include layout(fixed, #333, 1200px);
-
-        // @import "module/header";
-        // @import "module/footer";
-        //mixin
-
-
-        .content {
-            @include margin-center();
-        }
-
-        @mixin margin($left, $right, $width:100px, $height: 100px) {
-            margin-left: $left;
-            margin-right: $right;
-            @include rect($width, $height)
-        }
-
-        .box-margin {
-            @include margin(50px, 50px, 400px, 500px);
-        }
-
-        @mixin margin-base($left:40px, $right:40px) {
-            margin-left: $left;
-            margin-right: $right;
-        }
-
-        .box-base {
-            @include margin-base(60px);
-        }
-
-        @mixin margin-null($left, $right:null) {
-            margin-left: $left;
-            margin-right: $right;
-        }
-
-        .box-null {
-            @include margin-null(100px);
-            @include border-shadow(0 2px 3px rgba(0, 0, 0, .1));
-        }
-    }
-}
-
-
-@mixin wrapper($width, $height) {
-    .wrapper {
-        width: $width;
-        height: $height;
-        @content;
-    }
-}
-
-@include wrapper(1200px, 768px) {
-    background-color: #fff;
-    @include margin-center();
-}
-
-
-
-$a : 10;
-$b : 3;
-
-.box-cal {
-    width: 10px + 30px;
-    height: 30px - 20;
-    margin: 10 * 20px;
-    padding: ($a / $b) + px;
-    font: 12px / 18px
-}
-
-
-// $fontbase : 16px;
-
-
-@mixin fontstyle ($fontbase) {
-    h1 {
-        font-size: ceil($fontbase * 4);
-    }
-
-    h2 {
-        font-size: ceil($fontbase * 3.2);
-    }
-
-    h3 {
-        font-size: ceil($fontbase * 2.8);
-    }
-
-    h4 {
-        font-size: ceil($fontbase * 2);
-    }
-
-    h5 {
-        font-size: ceil($fontbase * 1.2);
-    }
-}
-
-@include fontstyle(20px);
-
-.width {
-    width: round(100.2px);
-    height: floor(100.1px);
-    color: #999 - #333
-}
-
-@mixin for_function($num) {
-    @for $i from 1 through $num {
-        .box_#{$i} {
-            width: $i * 1px;
-        }
-    }
-}
-
-
-@include for_function(10);
-
-
-@mixin margin-dis($dir, $num) {
-    @for $i from 1 through $num {
-        .margin#{$dir}-#{$i} {
-            margin-#{$dir}: $i * 1px;
-        }
-    }
-}
-
-// @for $i from 1 through 12 
-
-
-
-// .col-md-1 {
-//     width: (1/12) *100%;
+// @mixin margin-center() {
+//     margin-left: auto;
+//     margin-right: auto;
 // }
 
-// .col-md-2 {
-//     width: (2/12) *100%;
+// @mixin layout($style, $bgc, $w:null, $h:null) {
+//     @if $style==full {
+//         width: 100%;
+//         background-color: $bgc;
+//         height: $h;
+
+//     }
+
+//     @else {
+//         width: $w;
+//         background-color: $bgc;
+//         @include margin-center();
+//         height: $h;
+//     }
 // }
 
 
-@mixin grid($grid_num) {
-    @for $i from 1 through $grid_num {
-        .col-md-#{$i} {
-            width: ($i / $grid_num) * 100%;
-            display: inline-block;
-            padding: 5px 0;
-            box-sizing: border-box;
-        }
-    }
-}
-
-
-@include grid(12);
-
-
-//each
-$list : apple orange banana guava;
-
-@each $img in $list {
-    .img_#{$img} {
-        background: url('./img/#{$img}.jpg');
-    }
-}
-
-//1200px 992px 768px 576px  375px 
-
-//map
-$fonts: (h1: 40px,
-    h2:30px,
-    h3:20px,
-    h4: 16px,
-    h5: 12px);
-
-@each $title,
-$size in $fonts {
-    #{$title} {
-        font-size: $size;
-    }
-}
-
-$colors :(blue : #0073ff,
-    yellow : #fcfc00,
-    purple: #dd00ff);
-
-@each $color,
-$value in $colors {
-    .box-#{$color} {
-        background-color: $value;
-    }
-}
 
 
 
 
 
-@include respond_each(medium) {
-    .each_small {
-        margin: 10px;
-    }
-}
+// // @import "../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 
 
-//list
-
-$margin : 10px 20px 30px;
-
-.boxmargin {
-    // margin: length($margin);
-    // padding: nth($margin, 3);
-    margin: append($margin, 40px);
-    padding: index($margin, 10px);
-}
+// @mixin spec($classname, $width, $height, $img) {
+//     #{$classname} {
+//         width: $width;
+//         height: $height;
+//         background-image:url('img/#{$img}');
+//     }
+// }
 
 
-$padding_1:(top: 10px,
-    left: 20px);
-
-$padding_2:(right: 40px,
-    bottom : 30px);
-
-$colormap : (primary : #fff,
-    secondary : #333);
-
-$padding: map-merge($padding_1, $padding_2);
+// @include spec('.logo-nav', 100px, 30px, 'bot.jpg');
 
 
-.box {
-    // padding: map-get($padding_1 ,top);
-    // padding:  inspect($padding);
-    padding: map-get($padding, top);
-    background-color: map-get($colormap, secondary);
-}
 
-@include font-weights($font-weights);
+// body {
+//     color: $fontcolor;
+//     background-color: rgb(228, 228, 228);
+//     margin: 10px;
 
-.wrapper {
-    @include clearfix();
-}
+//     .wrapper {
+
+//         @include layout(fixed, #333, 1200px);
+
+//         // @import "module/header";
+//         // @import "module/footer";
+//         //mixin
+
+
+//         .content {
+//             @include margin-center();
+//         }
+
+//         @mixin margin($left, $right, $width:100px, $height: 100px) {
+//             margin-left: $left;
+//             margin-right: $right;
+//             @include rect($width, $height)
+//         }
+
+//         .box-margin {
+//             @include margin(50px, 50px, 400px, 500px);
+//         }
+
+//         @mixin margin-base($left:40px, $right:40px) {
+//             margin-left: $left;
+//             margin-right: $right;
+//         }
+
+//         .box-base {
+//             @include margin-base(60px);
+//         }
+
+//         @mixin margin-null($left, $right:null) {
+//             margin-left: $left;
+//             margin-right: $right;
+//         }
+
+//         .box-null {
+//             @include margin-null(100px);
+//             @include border-shadow(0 2px 3px rgba(0, 0, 0, .1));
+//         }
+//     }
+// }
+
+
+// @mixin wrapper($width, $height) {
+//     .wrapper {
+//         width: $width;
+//         height: $height;
+//         @content;
+//     }
+// }
+
+// @include wrapper(1200px, 768px) {
+//     background-color: #fff;
+//     @include margin-center();
+// }
+
+
+
+// $a : 10;
+// $b : 3;
+
+// .box-cal {
+//     width: 10px + 30px;
+//     height: 30px - 20;
+//     margin: 10 * 20px;
+//     padding: ($a / $b) + px;
+//     font: 12px / 18px
+// }
+
+
+// // $fontbase : 16px;
+
+
+// @mixin fontstyle ($fontbase) {
+//     h1 {
+//         font-size: ceil($fontbase * 4);
+//     }
+
+//     h2 {
+//         font-size: ceil($fontbase * 3.2);
+//     }
+
+//     h3 {
+//         font-size: ceil($fontbase * 2.8);
+//     }
+
+//     h4 {
+//         font-size: ceil($fontbase * 2);
+//     }
+
+//     h5 {
+//         font-size: ceil($fontbase * 1.2);
+//     }
+// }
+
+// @include fontstyle(20px);
+
+// .width {
+//     width: round(100.2px);
+//     height: floor(100.1px);
+//     color: #999 - #333
+// }
+
+// @mixin for_function($num) {
+//     @for $i from 1 through $num {
+//         .box_#{$i} {
+//             width: $i * 1px;
+//         }
+//     }
+// }
+
+
+// @include for_function(10);
+
+
+// @mixin margin-dis($dir, $num) {
+//     @for $i from 1 through $num {
+//         .margin#{$dir}-#{$i} {
+//             margin-#{$dir}: $i * 1px;
+//         }
+//     }
+// }
+
+// // @for $i from 1 through 12 
+
+
+
+// // .col-md-1 {
+// //     width: (1/12) *100%;
+// // }
+
+// // .col-md-2 {
+// //     width: (2/12) *100%;
+// // }
+
+
+// @mixin grid($grid_num) {
+//     @for $i from 1 through $grid_num {
+//         .col-md-#{$i} {
+//             width: ($i / $grid_num) * 100%;
+//             display: inline-block;
+//             padding: 5px 0;
+//             box-sizing: border-box;
+//         }
+//     }
+// }
+
+
+// @include grid(12);
+
+
+// //each
+// $list : apple orange banana guava;
+
+// @each $img in $list {
+//     .img_#{$img} {
+//         background: url('./img/#{$img}.jpg');
+//     }
+// }
+
+// //1200px 992px 768px 576px  375px 
+
+// //map
+// $fonts: (h1: 40px,
+//     h2:30px,
+//     h3:20px,
+//     h4: 16px,
+//     h5: 12px);
+
+// @each $title,
+// $size in $fonts {
+//     #{$title} {
+//         font-size: $size;
+//     }
+// }
+
+// $colors :(blue : #0073ff,
+//     yellow : #fcfc00,
+//     purple: #dd00ff);
+
+// @each $color,
+// $value in $colors {
+//     .box-#{$color} {
+//         background-color: $value;
+//     }
+// }
+
+
+
+
+
+// @include respond_each(medium) {
+//     .each_small {
+//         margin: 10px;
+//     }
+// }
+
+
+// //list
+
+// $margin : 10px 20px 30px;
+
+// .boxmargin {
+//     // margin: length($margin);
+//     // padding: nth($margin, 3);
+//     margin: append($margin, 40px);
+//     padding: index($margin, 10px);
+// }
+
+
+// $padding_1:(top: 10px,
+//     left: 20px);
+
+// $padding_2:(right: 40px,
+//     bottom : 30px);
+
+// $colormap : (primary : #fff,
+//     secondary : #333);
+
+// $padding: map-merge($padding_1, $padding_2);
+
+
+// .box {
+//     // padding: map-get($padding_1 ,top);
+//     // padding:  inspect($padding);
+//     padding: map-get($padding, top);
+//     background-color: map-get($colormap, secondary);
+// }
+
+// @include font-weights($font-weights);
+
+// .wrapper {
+//     @include clearfix();
+// }
+
+// // a {
+// //     color: #333;
+// // }
+
+// // a:hover {
+// //    color: #565656;
+// // }
+
 
 // a {
 //     color: #333;
+
+//     &:hover {
+//         color: #565656;
+//     }
+
+//     ;
+
+//     &:active {
+//         color: #999;
+//     }
 // }
 
-// a:hover {
-//    color: #565656;
+// #box::before {
+//     content: '';
+// }
+
+// #box::after {
+//     content: '';
 // }
 
 
-a {
-    color: #333;
+// //sass
 
-    &:hover {
-        color: #565656;
-    }
+// #box1 {
+//     &::before {}
 
-    ;
-
-    &:active {
-        color: #999;
-    }
-}
-
-#box::before {
-    content: '';
-}
-
-#box::after {
-    content: '';
-}
+//     &::after {}
+// }
 
 
-//sass
+// //@extend
 
-#box1 {
-    &::before {}
+// // .boxcommon {
+// //     width: 100px;
+// //     height: 30px;
+// // }
 
-    &::after {}
-}
+// /*extend*/
+// %blue {
+//     background-color: blue;
+// }
+
+// %green {
+//     background-color: green;
+// }
+
+// .bold {
+//     font-weight: bold;
+// }
+
+// .bolder {
+//     font-weight: bolder;
+// }
+
+// .lighter {
+//     font-weight: lighter;
+// }
 
 
-//@extend
+// #box2 {
+//     width: 100px;
+//     height: 30px;
+//     @extend %blue;
+//     @extend .bolder;
+// }
 
-// .boxcommon {
+// span {
+//     @extend .bolder;
+// }
+
+// #box3 {
+//     width: 100px;
+//     height: 30px;
+//     @extend %green;
+//     @extend .lighter;
+// }
+
+// /*mixin*/
+// @mixin rect1() {
 //     width: 100px;
 //     height: 30px;
 // }
 
-/*extend*/
-%blue {
-    background-color: blue;
-}
-
-%green {
-    background-color: green;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-.bolder {
-    font-weight: bolder;
-}
-
-.lighter {
-    font-weight: lighter;
-}
-
-
-#box2 {
-    width: 100px;
-    height: 30px;
-    @extend %blue;
-    @extend .bolder;
-}
-
-span {
-    @extend .bolder;
-}
-
-#box3 {
-    width: 100px;
-    height: 30px;
-    @extend %green;
-    @extend .lighter;
-}
-
-/*mixin*/
-@mixin rect1() {
-    width: 100px;
-    height: 30px;
-}
-
-.box2 {
-    background-color: blue;
-    @include rect1();
-}
-
-.box3 {
-    background-color: green;
-    @include rect1();
-}
-
-
-
-// h1 - h5
-
-
-//變數
-$fontSize : (h1 : 48px,
-    h2 : 40px,
-    h3 : 36px,
-    h4 : 30px);
-
-//each迴圈
-@each $titles,
-$size in $fontSize {
-    #{$titles} {
-        font-size: $size;
-    }
-}
-
-
-
-.btn {
-    width: 100px;
-    height: 30px;
-}
-
-$btn-module : (
-    primary : #0057f8,
-    secondary : #ea00ff,
-    info : #ff9100,
-    success : #38c500,
-    fail : #f20
-);
-
-@each $title , $color in $btn-module {
-
-    .btn-#{$title} {
-       background-color: $color;
-       @extend.btn;
-    }
-}
-
-
-
-// .btn-primary {
-
-//     background-color: #fff;
-//     @extend.btn;
+// .box2 {
+//     background-color: blue;
+//     @include rect1();
 // }
 
-// .btn-secondary {
-//     @extend.btn;
-//     background-color: #fff;
-// }
-
-// .btn-info {
-//     @extend.btn;
-//     background-color: #fff;
+// .box3 {
+//     background-color: green;
+//     @include rect1();
 // }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// @mixin rwd($phone_max-num) {
-//     @media all and (max-width: $phone_max-num) {
-//         @content
-//     }
-// }
-
-// @include rwd(768px) {
-//     .box {
-//         width: 300px;
+// // h1 - h5
+
+
+// //變數
+// $fontSize : (h1 : 48px,
+//     h2 : 40px,
+//     h3 : 36px,
+//     h4 : 30px);
+
+// //each迴圈
+// @each $titles,
+// $size in $fontSize {
+//     #{$titles} {
+//         font-size: $size;
 //     }
 // }
 
 
 
+// .btn {
+//     width: 100px;
+//     height: 30px;
+// }
+
+// $btn-module : (
+//     primary : #0057f8,
+//     secondary : #ea00ff,
+//     info : #ff9100,
+//     success : #38c500,
+//     fail : #f20
+// );
+
+// @each $title , $color in $btn-module {
+
+//     .btn-#{$title} {
+//        background-color: $color;
+//        @extend.btn;
+//     }
+// }
+
+
+
+// // .btn-primary {
+
+// //     background-color: #fff;
+// //     @extend.btn;
+// // }
+
+// // .btn-secondary {
+// //     @extend.btn;
+// //     background-color: #fff;
+// // }
+
+// // .btn-info {
+// //     @extend.btn;
+// //     background-color: #fff;
+// // }
 
 
 
@@ -581,5 +500,86 @@ $btn-module : (
 
 
 
-// @include margin-dis(top,100);
-// @include margin-dis(left,100);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // @mixin rwd($phone_max-num) {
+// //     @media all and (max-width: $phone_max-num) {
+// //         @content
+// //     }
+// // }
+
+// // @include rwd(768px) {
+// //     .box {
+// //         width: 300px;
+// //     }
+// // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // @include margin-dis(top,100);
+// // @include margin-dis(left,100);
