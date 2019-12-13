@@ -27,7 +27,7 @@ gulp.task('sass' ,function () {
 //監看
 gulp.task('watch',function(){
     gulp.watch('./sass/*.scss' ,['minicss']);
-    gulp.watch('./*.html' ,['fileinclude']);
+    gulp.watch(['./*.html' ,'./**/*.html'] ,['fileinclude']);
 });
 
 // html module
