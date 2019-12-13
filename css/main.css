@@ -22,37 +22,30 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-  display: block;
-}
+  display: block; }
 
 body {
-  line-height: 1;
-}
+  line-height: 1; }
 
 ol, ul {
-  list-style: none;
-}
+  list-style: none; }
 
 blockquote, q {
-  quotes: none;
-}
+  quotes: none; }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
-  content: none;
-}
+  content: none; }
 
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 body {
   font-family: "Open Sans", sans-serif;
@@ -65,57 +58,49 @@ body {
   color: #3f3f3f;
   letter-spacing: 0.01rem;
   word-spacing: 2px;
-  background-color: #000;
-}
+  background-color: #000; }
 
 body {
-  font-family: "Roboto", sans-serif;
-}
+  font-family: "Roboto", sans-serif; }
 
 body {
-  font-family: "Noto Sans TC", sans-serif;
-}
+  font-family: "Noto Sans TC", sans-serif; }
 
 .btn, .btn-primary, .btn-secondary, .btn-info, .btn-success, .btn-fail {
   width: 100px;
-  height: 30px;
-}
+  height: 30px; }
 
 .btn-primary {
-  background-color: #0057f8;
-}
+  background-color: #0057f8; }
 
 .btn-secondary {
-  background-color: #ea00ff;
-}
+  background-color: #ea00ff; }
 
 .btn-info {
-  background-color: #ff9100;
-}
+  background-color: #ff9100; }
 
 .btn-success {
-  background-color: #38c500;
-}
+  background-color: #38c500; }
 
 .btn-fail {
-  background-color: #f20;
-}
+  background-color: #f20; }
 
 header .logo {
   width: 100px;
   height: 30px;
-  background-color: #ff9900;
-}
+  background-color: #ff9900; }
 
 footer .logo {
   width: 100px;
-  height: 30px;
-}
+  height: 30px; }
 
 footer nav ul li {
   display: inline-block;
   width: 100px;
   height: 30px;
-  background-color: #00fc7a;
-}
-/*# sourceMappingURL=main.css.map */
+  background-color: #00fc7a; }
+
+.wrapper_full {
+  width: 100vw;
+  height: 100vh;
+  color: #ff0084; }

@@ -10,15 +10,20 @@ gulp.task('concat', function () {
 });
 
 
-gulp.task('minicss', function () {
+gulp.task('minicss',['sass'],function () {
     //do something
-    return gulp.src('./css/plugin.css').pipe(cleanCSS({
+    return gulp.src('./css/*.css').pipe(cleanCSS({
         compatibility: 'ie8'
     })).pipe(gulp.dest('./dist/css/'))
 });
 
-gulp.task('sass', function () {
+gulp.task('sass' ,function () {
     return gulp.src('./sass/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(gulp.dest('./css'));
 });
+
+//監看
+gulp.task('watch',function(){
+    gulp.watch('./sass/*.scss' ,['minicss']);
+})
