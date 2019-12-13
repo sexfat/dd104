@@ -18,6 +18,9 @@
   "homepage": "https://github.com/sexfat/dd104#readme",
   "dependencies": {
     "bootstrap-sass": "^3.4.1",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.0"
   }
 }
