@@ -334,11 +334,11 @@ a:active {
 }
 
 /*extend*/
-.blue, #box2 {
+#box2 {
   background-color: blue;
 }
 
-.green, #box3 {
+#box3 {
   background-color: green;
 }
 

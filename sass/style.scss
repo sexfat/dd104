@@ -345,24 +345,22 @@ a {
 // }
 
 /*extend*/
-.blue {
+%blue {
     background-color: blue;
 }
-
-.green {
+%green {
     background-color: green;
 }
-
 #box2 {
     width: 100px;
     height: 30px;
-    @extend .blue;
+    @extend %blue;
 }
 
 #box3 {
     width: 100px;
     height: 30px;
-    @extend .green;
+    @extend %green;
 }
 
 /*mixin*/
