@@ -76,6 +76,31 @@ body {
   font-family: "Noto Sans TC", sans-serif;
 }
 
+.btn, .btn-primary, .btn-secondary, .btn-info, .btn-success, .btn-fail {
+  width: 100px;
+  height: 30px;
+}
+
+.btn-primary {
+  background-color: #0057f8;
+}
+
+.btn-secondary {
+  background-color: #ea00ff;
+}
+
+.btn-info {
+  background-color: #ff9100;
+}
+
+.btn-success {
+  background-color: #38c500;
+}
+
+.btn-fail {
+  background-color: #f20;
+}
+
 header .logo {
   width: 100px;
   height: 30px;

@@ -1,0 +1,12 @@
+.btn {
+    width: 100px;
+    height: 30px;
+}
+@mixin btn_module($btn-module) {
+    @each $title , $color in $btn-module {
+        .btn-#{$title} {
+           background-color: $color;
+           @extend.btn;
+        }
+    } 
+}

@@ -1,0 +1,8 @@
+$btnstyle : (
+    primary : #0057f8,
+    secondary : #ea00ff,
+    info : #ff9100,
+    success : #38c500,
+    fail : #f20
+);
+@include btn_module($btnstyle);
