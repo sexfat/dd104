@@ -348,19 +348,40 @@ a {
 %blue {
     background-color: blue;
 }
+
 %green {
     background-color: green;
 }
+
+.bold {
+    font-weight: bold;
+}
+
+.bolder {
+    font-weight: bolder;
+}
+
+.lighter {
+    font-weight: lighter;
+}
+
+
 #box2 {
     width: 100px;
     height: 30px;
     @extend %blue;
+    @extend .bolder;
+}
+
+span {
+    @extend .bolder;
 }
 
 #box3 {
     width: 100px;
     height: 30px;
     @extend %green;
+    @extend .lighter;
 }
 
 /*mixin*/
@@ -378,6 +399,88 @@ a {
     background-color: green;
     @include rect1();
 }
+
+
+
+// h1 - h5
+
+
+//變數
+$fontSize : (h1 : 48px,
+    h2 : 40px,
+    h3 : 36px,
+    h4 : 30px);
+
+//each迴圈
+@each $titles,
+$size in $fontSize {
+    #{$titles} {
+        font-size: $size;
+    }
+}
+
+
+
+.btn {
+    width: 100px;
+    height: 30px;
+}
+
+$btn-module : (
+    primary : #0057f8,
+    secondary : #ea00ff,
+    info : #ff9100,
+    success : #38c500,
+    fail : #f20
+);
+
+@each $title , $color in $btn-module {
+
+    .btn-#{$title} {
+       background-color: $color;
+       @extend.btn;
+    }
+}
+
+
+
+// .btn-primary {
+
+//     background-color: #fff;
+//     @extend.btn;
+// }
+
+// .btn-secondary {
+//     @extend.btn;
+//     background-color: #fff;
+// }
+
+// .btn-info {
+//     @extend.btn;
+//     background-color: #fff;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

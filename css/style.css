@@ -342,6 +342,18 @@ a:active {
   background-color: green;
 }
 
+.bold {
+  font-weight: bold;
+}
+
+.bolder, #box2, span {
+  font-weight: bolder;
+}
+
+.lighter, #box3 {
+  font-weight: lighter;
+}
+
 #box2 {
   width: 100px;
   height: 30px;
@@ -363,5 +375,46 @@ a:active {
   background-color: green;
   width: 100px;
   height: 30px;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h3 {
+  font-size: 36px;
+}
+
+h4 {
+  font-size: 30px;
+}
+
+.btn, .btn-primary, .btn-secondary, .btn-info, .btn-success, .btn-fail {
+  width: 100px;
+  height: 30px;
+}
+
+.btn-primary {
+  background-color: #0057f8;
+}
+
+.btn-secondary {
+  background-color: #ea00ff;
+}
+
+.btn-info {
+  background-color: #ff9100;
+}
+
+.btn-success {
+  background-color: #38c500;
+}
+
+.btn-fail {
+  background-color: #f20;
 }
 /*# sourceMappingURL=style.css.map */
