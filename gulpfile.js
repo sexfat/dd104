@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var cleanCSS = require('gulp-clean-css');
 var sass = require('gulp-sass');
+var fileinclude = require('gulp-file-include');
 
 
 //搬家
@@ -26,4 +27,14 @@ gulp.task('sass' ,function () {
 //監看
 gulp.task('watch',function(){
     gulp.watch('./sass/*.scss' ,['minicss']);
-})
+});
+
+// html module
+gulp.task('fileinclude', function() {
+    gulp.src(['index.html'])
+      .pipe(fileinclude({
+        prefix: '@@',
+        basepath: '@file'
+      }))
+      .pipe(gulp.dest('./dist'));
+  });
