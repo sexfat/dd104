@@ -27,11 +27,12 @@ gulp.task('sass' ,function () {
 //監看
 gulp.task('watch',function(){
     gulp.watch('./sass/*.scss' ,['minicss']);
+    gulp.watch('./*.html' ,['fileinclude']);
 });
 
 // html module
 gulp.task('fileinclude', function() {
-    gulp.src(['index.html'])
+    gulp.src(['*.html'])
       .pipe(fileinclude({
         prefix: '@@',
         basepath: '@file'
