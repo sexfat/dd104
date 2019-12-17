@@ -54,4 +54,5 @@ gulp.task('fileinclude', function() {
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss"], ['minicss']).on('change', reload);
     gulp.watch(["*.html" , "**/*.html"] , ['fileinclude']).on('change', reload);
+    gulp.watch(["dist/*.js"] ).on('change', reload);
 });
