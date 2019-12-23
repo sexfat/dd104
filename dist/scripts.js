@@ -1,5 +1,3 @@
-
-
 // TweenMax.to('.animation_01', 5, {
 //     // x: 200,
 //     // scale: 4,
@@ -120,46 +118,94 @@ let animation_09 = TweenMax.to('.animation_09', 1, {
 //執行程式
 var scene01 = new ScrollMagic.Scene({
     triggerElement: '#section_04', //觸發點
-    offset: 0, 
-    duration : '50%' ,
+    offset: 0,
+    duration: '50%',
     reverse: false
 }).setTween(animation_09).addIndicators().addTo(controller);
 
 
 var tlparallax = new TimelineMax();
 
-var parallax01 = TweenMax.to('.animation_010' , 1 ,{
+var parallax01 = TweenMax.to('.animation_010', 1, {
     y: "10%",
     ease: Power0.easeNone
 });
 
-var parallax02 =TweenMax.to('.animation_011' , 1 ,{
+var parallax02 = TweenMax.to('.animation_011', 1, {
     y: "300%",
     ease: Power0.easeNone
 });
 
-var parallax03 = TweenMax.to('.animation_012' , 1 ,{
+var parallax03 = TweenMax.to('.animation_012', 1, {
     y: "100%",
     ease: Power0.easeNone
 })
 
-tlparallax.add([parallax01 , parallax02 , parallax03]);
+tlparallax.add([parallax01, parallax02, parallax03]);
 
 
 
 
 var sceneParallax = new ScrollMagic.Scene({
-   triggerElement :'#section_05',
-   triggerHook: 1,
-   duration: '100%'
+    triggerElement: '#section_05',
+    triggerHook: 1,
+    duration: '100%'
 }).setTween(tlparallax).addIndicators().addTo(controller);
 
 
 
 //動態塞入css
 var sceneCss = new ScrollMagic.Scene({
-    triggerElement :'#section_06',
-}).setClassToggle('.bg_all' , 'bgc').addIndicators().addTo(controller);
+    triggerElement: '#section_06',
+}).setClassToggle('.bg_all', 'bgc').addIndicators().addTo(controller);
+
+
+var tlpin = new TimelineMax();
+
+tlpin.add(TweenMax.to('.animation_013', 1, {
+    x: 300
+}));
+tlpin.add(TweenMax.to('.animation_014', 1, {
+    x: 300
+}));
+tlpin.add(TweenMax.to('.animation_015', 1, {
+    x: 400
+}));
+
+
+var scenePin = new ScrollMagic.Scene({
+    triggerElement: "#section_07",
+    duration: '300%',
+    triggerHook: 0
+}).setPin('.section_07').setTween(tlpin).addIndicators().addTo(controller);
+
+
+
+
+
+var fullanimation = new TimelineMax();
+
+fullanimation.fromTo('.bg-01', 1, {
+    y: '-100%'
+}, {
+    y: '0%'
+}).fromTo('.bg-02', 1, {
+    y: '-100%'
+}, {
+    y: '0%'
+}).fromTo('.bg-03', 1, {
+    x: '-100%'
+}, {
+    x: '0%'
+});
+
+var fullpin = new ScrollMagic.Scene({
+    triggerElement: '#section_09',
+    duration: '300%',
+    triggerHook: 0
+}).setPin('.section_09').setTween(fullanimation).addIndicators().addTo(controller);
+
+
 
 
 

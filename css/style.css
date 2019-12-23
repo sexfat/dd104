@@ -43,3 +43,15 @@ body {
       will-change: transform; }
       body .section_06 .bg_all.bgc {
         transform: scale(1.1); }
+  body .section_08 {
+    background-color: #028df7; }
+  body .section_09 .scrollbg .bg {
+    width: 100vw;
+    height: 100vh;
+    position: absolute; }
+  body .section_09 .scrollbg .bg-01 {
+    background-color: #0dfe00; }
+  body .section_09 .scrollbg .bg-02 {
+    background-color: #00b3ff; }
+  body .section_09 .scrollbg .bg-03 {
+    background-color: #ff00d9; }
