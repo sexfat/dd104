@@ -1,24 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+    <script src="./jquery.min.js"></script>
+    <script src="./ScrollToPlugin.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
-    
+
     <title>Tweenmax 套件</title>
 </head>
+
 <body>
 
-    <div class="box animation_01">box1</div>
-    <div class="box animation_02">box2</div>
-    <div class="box animation_03">box3</div>
+    <section>
+        <div class="box animation_01">box1</div>
+        <div class="box animation_02">box2</div>
+        <div class="box animation_03">box3</div>
+    </section>
+    <hr>
+    <section>
+        <h2>section2</h2>
+        <button id="scrollTo">scrollto</button>
+        <button id="play">play</button>
+        <div class="box animation_04"></div>
+        <button id="go">play</button>
+        <button id="stop">stop</button>
+        <button id="resume">resume</button>
+        <button id="restart">restart</button>
+        <button id="reverse">reverse</button>
+        <div class="box animation_05">005</div>
+
+    </section>
+    <section class="section_03">
+        <h2>section3</h2>
+
+    </section>
+    <section>
+        <div id="section_04"></div>
+        <h2>section4</h2>
+
+    </section>
+
+
     <!-- <div class="box animation_04">box4</div>
     <div class="box animation_05">box5</div>
     <div class="box animation_06">box6</div> -->
-    
 
-   <script src="scripts.js"></script> 
+
+    <script src="scripts.js"></script>
 </body>
+
 </html>

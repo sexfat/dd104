@@ -46,10 +46,12 @@ gulp.task('fileinclude', function() {
   gulp.task('default', function () {
     browserSync.init({
         server: {
+
             //根目錄
             baseDir: "./dist",
             index: "index.html"
-        }
+        },
+        port: 4000
     });
 
     gulp.watch(["sass/*.scss", "sass/**/*.scss"], ['minicss']).on('change', reload);

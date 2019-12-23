@@ -1,7 +1,3 @@
-// import { TimelineMax } from "gsap";
-
-// import { TweenMax } from "gsap";
-
 // TweenMax.to('.animation_01', 5, {
 //     // x: 200,
 //     // scale: 4,
@@ -14,7 +10,11 @@
 
 
 
-var tl = new TimelineMax();
+var tl = new TimelineMax({
+    repeat: 2,
+    yoyo: true
+
+});
 
 tl.from('.animation_02', 2, {
     y: 300,
@@ -25,7 +25,73 @@ tl.from('.animation_02', 2, {
 }, {
     y: 200,
     ease: Bounce.easeOut
-})
+});
+
+var play = $('#play');
+
+play.on('click', function () {
+    TweenMax.to('.animation_04', 1, {
+        x: 200
+    })
+});
+
+
+var tlcontrol = new TimelineMax({
+    repeat: -1
+});
+
+tlcontrol.to('.animation_05', 5, {
+    x: 100,
+    opacity: 0
+});
+
+tlcontrol.stop();
+
+
+document.getElementById("go").onclick = function () {
+    tlcontrol.play();
+}
+
+document.getElementById("stop").onclick = function () {
+    tlcontrol.stop();
+}
+
+document.getElementById("resume").onclick = function () {
+    tlcontrol.resume();
+}
+
+document.getElementById("restart").onclick = function () {
+    tlcontrol.restart();
+}
+
+document.getElementById("reverse").onclick = function () {
+    tlcontrol.reverse();
+}
+
+
+
+document.getElementById("scrollTo").onclick = function () {
+    TweenMax.to(window, 2, {
+        scrollTo: {
+            y: "#section_04",
+            offsetY: 100
+
+        }
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // TweenMax.to('.animation_03', 3, {
@@ -42,7 +108,7 @@ tl.from('.animation_02', 2, {
 //             y: 50
 //         }],
 //         autoRotate: false,
-        
+
 //     },
 //     opacity: 0,
 //     ease: Power1.easeOut
