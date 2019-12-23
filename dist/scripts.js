@@ -1,3 +1,5 @@
+
+
 // TweenMax.to('.animation_01', 5, {
 //     // x: 200,
 //     // scale: 4,
@@ -75,10 +77,42 @@ document.getElementById("scrollTo").onclick = function () {
         scrollTo: {
             y: "#section_04",
             offsetY: 100
-
         }
     })
 }
+
+function warns() {
+    alert('alert');
+}
+
+function goAlert() {
+    alert('goalert');
+}
+
+
+TweenMax.to('.animation_06', 1, {
+    y: 200,
+    onComplete: warns
+})
+
+var callbackFunc = new TimelineMax({
+    onComplete: goAlert
+   
+});
+
+
+callbackFunc.to('.animation_07' , 1 ,{
+    y: 100
+}).to('.animation_08' , 1 ,{
+    x: 200
+})
+
+
+
+
+
+
+
 
 
 
