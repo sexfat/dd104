@@ -1,6 +1,7 @@
 body {
     background-color: rgb(36, 36, 36);
     padding-top:200px;
+    overflow-x: hidden;
 
     .box {
         border: 1px solid #fff;
@@ -14,5 +15,27 @@ body {
        width: 100vw;
        height: 100vh; 
        color: #fff;
+    }
+    .section_04 {
+       background-color: rgb(164, 164, 164); 
+    }
+    .section_05 {
+        background-image: url('https://placem.at/people');
+        background-size: cover;
+        .animation_010 {
+           position: relative;
+           top: 100px;
+           left: 400px
+        }
+        .animation_011 {
+            position: relative;
+            top: 400px;
+            left: 200px
+         }
+         .animation_012 {
+            position: relative;
+            top: 500px;
+            left: 500px
+         }
     }
 }

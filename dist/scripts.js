@@ -81,39 +81,78 @@ document.getElementById("scrollTo").onclick = function () {
     })
 }
 
-function warns() {
-    alert('alert');
-}
+// function warns() {
+//     alert('alert');
+// }
 
-function goAlert() {
-    alert('goalert');
-}
+// function goAlert() {
+//     alert('goalert');
+// }
 
 
 TweenMax.to('.animation_06', 1, {
     y: 200,
-    onComplete: warns
+    // onComplete: warns
 })
 
 var callbackFunc = new TimelineMax({
-    onComplete: goAlert
-   
+    // onComplete: goAlert
+
 });
 
 
-callbackFunc.to('.animation_07' , 1 ,{
+callbackFunc.to('.animation_07', 1, {
     y: 100
-}).to('.animation_08' , 1 ,{
+}).to('.animation_08', 1, {
     x: 200
+});
+
+
+//設定場景
+var controller = new ScrollMagic.Controller();
+
+
+//動畫
+let animation_09 = TweenMax.to('.animation_09', 1, {
+    x: 400
+});
+
+//執行程式
+var scene01 = new ScrollMagic.Scene({
+    triggerElement: '#section_04', //觸發點
+    offset: 0, 
+    duration : '50%' ,
+    triggerHook : 0
+}).setTween(animation_09).addIndicators().addTo(controller);
+
+
+var tlparallax = new TimelineMax();
+
+var parallax01 = TweenMax.to('.animation_010' , 1 ,{
+    y: "10%",
+    ease: Power0.easeNone
+});
+
+var parallax02 =TweenMax.to('.animation_011' , 1 ,{
+    y: "300%",
+    ease: Power0.easeNone
+});
+
+var parallax03 = TweenMax.to('.animation_012' , 1 ,{
+    y: "100%",
+    ease: Power0.easeNone
 })
 
+tlparallax.add([parallax01 , parallax02 , parallax03]);
 
 
 
 
-
-
-
+var sceneParallax = new ScrollMagic.Scene({
+   triggerElement :'#section_05',
+   triggerHook: 0,
+   duration: '100%'
+}).setTween(tlparallax).addIndicators().addTo(controller);
 
 
 
