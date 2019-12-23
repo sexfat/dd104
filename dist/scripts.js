@@ -122,7 +122,7 @@ var scene01 = new ScrollMagic.Scene({
     triggerElement: '#section_04', //觸發點
     offset: 0, 
     duration : '50%' ,
-    triggerHook : 0
+    reverse: false
 }).setTween(animation_09).addIndicators().addTo(controller);
 
 
@@ -150,9 +150,23 @@ tlparallax.add([parallax01 , parallax02 , parallax03]);
 
 var sceneParallax = new ScrollMagic.Scene({
    triggerElement :'#section_05',
-   triggerHook: 0,
+   triggerHook: 1,
    duration: '100%'
 }).setTween(tlparallax).addIndicators().addTo(controller);
+
+
+
+//動態塞入css
+var sceneCss = new ScrollMagic.Scene({
+    triggerElement :'#section_06',
+}).setClassToggle('.bg_all' , 'bgc').addIndicators().addTo(controller);
+
+
+
+
+
+
+
 
 
 

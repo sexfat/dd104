@@ -38,4 +38,22 @@ body {
             left: 500px
          }
     }
+    .section_06 {
+        overflow: hidden;
+        .bg_all {
+          width: 100%;
+          height: 100vh;
+          background-image: url('https://placem.at/places');
+          background-color: #000;
+          background-size: cover;
+          transform-origin: center;
+          transform: scale(1.8);
+          transition: transform 3s ease-out;
+          will-change: transform;
+          &.bgc {
+            transform: scale(1.1);
+          }
+        }
+      }
+     
 }
